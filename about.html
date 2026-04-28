@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yugen Greenery Hub | About Our Mindful Garden Philosophy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f7e8;
+            color: #1e3a2f;
+            line-height: 1.6;
+        }
+
+        /* Green Theme Variables */
+        :root {
+            --primary-green: #2b5e3b;
+            --light-green: #e8f5e9;
+            --accent-green: #4caf50;
+            --dark-green: #1b3b2b;
+            --earth-brown: #8d6e63;
+            --cream: #fef9e6;
+            --soft-sage: #c5e0b4;
+        }
+
+        /* Reuse header/footer styles from main (same identity) */
+        header {
+            background: linear-gradient(135deg, #1e4a2f, #2e7d32);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #c8e6b5;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4f1c6;
+            transform: translateY(-2px);
+        }
+
+        /* Page Hero - About specific */
+        .about-hero {
+            background: linear-gradient(rgba(30,74,47,0.82), rgba(27,59,43,0.85)), url('https://images.pexels.com/photos/4503277/plants-leaves-green-nature-vegetation.jpg?auto=compress&cs=tinysrgb&w=1600');
+            background-size: cover;
+            background-position: center 30%;
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .about-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+            text-shadow: 2px 2px 12px rgba(0,0,0,0.4);
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1e4a2f;
+            border-bottom: 3px solid #8bc34a;
+            display: inline-block;
+            width: auto;
+        }
+
+        .title-wrapper {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .content-block {
+            background: white;
+            padding: 2rem 2.5rem;
+            border-radius: 32px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .content-block:hover {
+            transform: translateY(-3px);
+        }
+
+        .story-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        .story-text {
+            flex: 2;
+        }
+
+        .story-image {
+            flex: 1.2;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: 0.4s;
+        }
+
+        .story-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .values-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .value-card {
+            background: #ffffffdd;
+            background: white;
+            padding: 1.8rem;
+            border-radius: 32px;
+            width: 260px;
+            text-align: center;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid #d9f0cc;
+        }
+
+        .value-card:hover {
+            background: var(--cream);
+            transform: translateY(-8px);
+        }
+
+        .value-icon {
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .value-card h3 {
+            color: #2b5e3b;
+            margin-bottom: 0.5rem;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background: var(--primary-green);
+            color: white;
+            padding: 2.5rem 1rem;
+            border-radius: 48px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .stat {
+            flex: 1;
+            min-width: 150px;
+            padding: 1rem;
+        }
+
+        .stat h4 {
+            font-size: 2.4rem;
+            font-weight: 800;
+        }
+
+        .testimonial-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .testimonial {
+            background: #fef9e6;
+            padding: 1.8rem;
+            border-radius: 28px;
+            width: 300px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+            font-style: italic;
+        }
+
+        .testimonial span {
+            font-weight: bold;
+            display: block;
+            margin-top: 1rem;
+            color: #2e7d32;
+        }
+
+        .team-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .team-member {
+            text-align: center;
+            width: 200px;
+        }
+
+        .team-member img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #8bc34a;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            background: #f5b042;
+            color: #1e3a2f;
+            padding: 10px 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #ffc107;
+            transform: scale(1.02);
+        }
+
+        footer {
+            background: #0f2a1f;
+            color: #d0ecd0;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .green-line {
+            height: 4px;
+            background: #8bc34a;
+            width: 80px;
+            margin: 1rem auto;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+            .story-grid {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">🌿 <span>Yugen</span> Greenery Hub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms Of Privacy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- About Page Specific Hero -->
+<section class="about-hero">
+    <h1>Our Story: Rooted in Grace & Growth</h1>
+    <p>Discover the heart behind Yugen Greenery Hub — where gardening meets mindfulness, sustainability, and community.</p>
+</section>
+
+<div class="container">
+    <!-- Deep Philosophy Section -->
+    <div class="title-wrapper">
+        <h2 class="section-title">The Soul of Yugen</h2>
+    </div>
+    <div class="content-block">
+        <p style="font-size:1.1rem;"><strong>“Yūgen”</strong> is a profound Japanese aesthetic concept: an awareness of the universe that triggers emotional responses too deep and mysterious for words. At <strong>Yugen Greenery Hub</strong>, we believe that every garden is a canvas for Yūgen — subtle beauty, silent wisdom, and interconnected life. Founded in 2018 by a collective of horticulturists, ecologists, and wellness advocates, we began as a small nursery with a radical idea: gardening should heal both the planet and the human spirit.</p>
+        <p>Today, we are a thriving ecosystem of 10+ acres of organic cultivation, a knowledge hub for 12,000+ gardeners, and a beacon for regenerative living. Our methods are inspired by permaculture, biomimicry, and traditional farming wisdom from around the world. From rooftop farms in metros to backyard biodiversity corridors, we work with individuals, schools, and corporations to reimagine green spaces.</p>
+        <p>But more than a business, we are a movement. Every plant sold, every workshop taught, every compost bin built — we are planting seeds of consciousness.</p>
+    </div>
+
+    <!-- Our Journey & Image -->
+    <div class="story-grid">
+        <div class="story-text">
+            <h3 style="color:#2b5e3b; margin-bottom: 0.8rem;">🌻 From a Tiny Seed to a Flourishing Forest</h3>
+            <p>In the beginning, our founders transformed a barren land in the outskirts of Bangalore into a living lab for organic gardening. With just 50 saplings and an unwavering belief in nature's resilience, we developed soil that was once arid into rich, carbon-rich loam using composting and green manure. Over the years, Yugen Greenery Hub evolved into a botanical sanctuary with over 700 species of native trees, medicinal herbs, and pollinator plants. We’ve organized over 150 community planting drives, restored 3 urban lake catchments, and donated 5000+ fruit trees to underprivileged farms. Our team includes botanists, permaculture designers, and wellness coaches — all joined by a passion for earth-friendly living.</p>
+            <p>Our philosophy extends beyond aesthetics: we practice zero waste across operations, use solar-powered irrigation, and all our nursery pots are biodegradable. Every purchase from Yugen contributes 1% revenue to rewilding projects in the Western Ghats.</p>
+            <a href="#contact" class="btn" style="margin-top: 1rem;">🌱 Join Our Green Family</a>
+        </div>
+        <div class="story-image">
+            <img src="https://images.pexels.com/photos/1422321/people-on-garden-1422321.jpg?auto=compress&cs=tinysrgb&w=800" alt="Community gardening together">
+        </div>
+    </div>
+
+    <!-- Core Values Section -->
+    <div class="title-wrapper">
+        <h2 class="section-title">Our Guiding Principles</h2>
+    </div>
+    <div class="values-list">
+        <div class="value-card">
+            <div class="value-icon">🌎</div>
+            <h3>Regenerative Impact</h3>
+            <p>Beyond sustainability – we restore ecosystems, build soil health, and sequester carbon with native afforestation.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">🧘🏽‍♀️</div>
+            <h3>Mindful Gardening</h3>
+            <p>Gardening as meditation. Encouraging slow, intentional care that nurtures mental clarity and ecological balance.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <h3>Community First</h3>
+            <p>Free learning circles, seed swaps, and volunteer days — co-creating resilient neighborhoods through plant wisdom.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">🎓</div>
+            <h3>Knowledge Democracy</h3>
+            <p>Open-source gardening guides, accessible workshops, and urban farming toolkits for all skill levels.</p>
+        </div>
+    </div>
+
+    <!-- Impact Statistics - To enrich content -->
+    <div class="stats">
+        <div class="stat">
+            <h4>12,500+</h4>
+            <p>Happy Gardeners Mentored</p>
+        </div>
+        <div class="stat">
+            <h4>28,000+</h4>
+            <p>Native Trees Planted</p>
+        </div>
+        <div class="stat">
+            <h4>350+</h4>
+            <p>Workshops (Online & In-person)</p>
+        </div>
+        <div class="stat">
+            <h4>98%</h4>
+            <p>Customer Satisfaction</p>
+        </div>
+    </div>
+
+    <!-- Extended 'Our Approach' More Content -->
+    <div class="content-block">
+        <h3>📜 Our Charter for Earth & People</h3>
+        <p>We are a certified social enterprise committed to United Nations Sustainable Development Goals (SDGs): Climate Action (13), Life on Land (15), and Responsible Consumption (12). Our organic nursery never uses synthetic pesticides or GMO seeds. We propagate heirloom varieties to preserve genetic diversity. We host free "Garden Therapy" sessions for senior citizens and people with disabilities, understanding that connection to soil lowers stress and improves well-being. Additionally, our internship program trains young agro-ecologists, empowering the next generation of green leaders. Since 2022, we've also launched the "Yugen Mobile Nursery" — a van that delivers plants and know-how to remote villages and schoolyards. Transparency, kindness, and ecological integrity run through every leaf we nurture.</p>
+        <p>Our impact indicators: zero-waste office by 2023, plastic-free packaging, 15 acres of land under organic management, and a thriving seed library with over 300 open-pollinated seed varieties. We invite you to visit our hub, sit under the banyan tree, and experience the quiet magic of growing life.</p>
+    </div>
+
+    <!-- Meet Our Team -->
+    <div class="title-wrapper">
+        <h2 class="section-title">The Hearts Behind Yugen</h2>
+    </div>
+    <div class="team-gallery">
+        <div class="team-member">
+            <img src="https://images.pexels.com/photos/4403331/portrait-of-young-woman-holding-leaves-4403331.jpg?auto=compress&cs=tinysrgb&w=400" alt="Founder Anjali">
+            <h4>Anjali Rawat</h4>
+            <p>Founder & Ecologist</p>
+        </div>
+        <div class="team-member">
+            <img src="https://images.pexels.com/photos/3772610/portrait-of-man-in-garden-3772610.jpg?auto=compress&cs=tinysrgb&w=400" alt="Head of Horticulture">
+            <h4>Devesh Nair</h4>
+            <p>Head Horticulturist</p>
+        </div>
+        <div class="team-member">
+            <img src="https://images.pexels.com/photos/4611982/portrait-of-smiling-woman-in-garden-4611982.jpg?auto=compress&cs=tinysrgb&w=400" alt="Community Lead">
+            <h4>Meera Iyer</h4>
+            <p>Community & Education</p>
+        </div>
+        <div class="team-member">
+            <img src="https://images.pexels.com/photos/2884848/pexels-photo-2884848.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Landscape Designer">
+            <h4>Rohan Mehta</h4>
+            <p>Landscape Architect</p>
+        </div>
+    </div>
+
+    <!-- Testimonials from Real Members (story-rich) -->
+    <div class="title-wrapper">
+        <h2 class="section-title">Our Community's Voice</h2>
+    </div>
+    <div class="testimonial-grid">
+        <div class="testimonial">
+            “Yugen transformed my barren terrace into a thriving vegetable garden. Their team provided continuous support. Now I grow 30% of my own food. More than that, the mindfulness workshops changed my relationship with nature.”
+            <span>— Priya K., Bengaluru</span>
+        </div>
+        <div class="testimonial">
+            “The permaculture design course opened my eyes. I learned how to build swales, guilds, and regenerate soil. Amazing community, and the nursery plants are super healthy. Highly recommended!”
+            <span>— Suresh M., Chennai</span>
+        </div>
+        <div class="testimonial">
+            “We hired Yugen for our office campus greening — they planted 600 native plants and created pollinator corridors. Now employees love the serene garden breaks. A truly ethical and inspiring team.”
+            <span>— Habitat Tech Park</span>
+        </div>
+    </div>
+
+    <!-- Additional Awards and Partnerships -->
+    <div class="content-block" style="background: #eaf5e4;">
+        <h3 style="display: flex; align-items: center; gap: 10px;">🏆 Recognitions & Alliances</h3>
+        <p>Winner of 'Eco-Enterprise Award 2024' by Karnataka Green Council. Official partner of 'Save the Western Ghats' campaign. Member of the Indian Permaculture Network. We've been featured in 'The Gardeners' Chronicle', 'TerraGreen Magazine', and featured on National Geographic India's 'Green Warriors' series (2023). Our methods are aligned with the Savory Institute's holistic management framework, and we frequently collaborate with local universities for agroecological research. When you align with Yugen, you’re part of a global shift towards conscious gardening.</p>
+        <p>We also co-organize the annual “Bangalore Bloom Fest” — a celebration of urban biodiversity with tree walks, seed giveaways, and expert talks. Join us each November to be part of this vibrant green gathering.</p>
+    </div>
+
+    <!-- Call to Action based on About Philosophy -->
+    <div class="title-wrapper">
+        <h2 class="section-title">Grow With Us, Mindfully</h2>
+    </div>
+    <div style="text-align: center; margin: 1rem 0 2rem;">
+        <p style="font-size:1.2rem;">Whether you’re a budding gardener or a landscape professional, Yugen Greenery Hub welcomes you to explore, learn, and flourish.</p>
+        <a href="contact.html" class="btn" style="background: #2b5e3b; color: white; margin-top: 1rem;">🌼 Visit Us / Get Involved</a>
+        <a href="index.html#services" class="btn" style="margin-left: 0.8rem;">🌸 Explore Services</a>
+    </div>
+</div>
+
+<!-- Footer with address and phone (as required) -->
+<footer>
+    <div class="footer-content">
+        <h3>Yugen Greenery Hub</h3>
+        <div class="green-line"></div>
+        <p>📍 Address: 128, Green Valley Avenue, Eco Park Road, Near Lotus Pond, Bangalore - 560078, Karnataka, India</p>
+        <p>📞 Phone / WhatsApp: +91 98765 43210 | +91 8067891234</p>
+        <p>✉️ Email: hello@yugengreenery.in | support@yugengreenery.com</p>
+        <p>🕒 Open Hours: Mon-Sat 9:00 AM – 7:00 PM | Sunday: 10 AM – 2 PM (Nursery only)</p>
+        <p style="margin-top: 1.5rem; font-size:0.85rem;">© 2026 Yugen Greenery Hub — Cultivating Mindful Gardens, One Leaf At A Time 🌱</p>
+    </div>
+</footer>
+
+</body>
+</html>

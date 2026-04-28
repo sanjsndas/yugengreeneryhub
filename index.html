@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yugen Greenery Hub | Mindful Gardening</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f7e8;
+            color: #1e3a2f;
+            line-height: 1.6;
+        }
+
+        /* Green Theme Variables */
+        :root {
+            --primary-green: #2b5e3b;
+            --light-green: #e8f5e9;
+            --accent-green: #4caf50;
+            --dark-green: #1b3b2b;
+            --earth-brown: #8d6e63;
+            --cream: #fef9e6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e4a2f, #2e7d32);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #c8e6b5;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4f1c6;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30,74,47,0.85), rgba(46,125,50,0.85)), url('https://images.pexels.com/photos/4503277/plants-leaves-green-nature-vegetation.jpg?auto=compress&cs=tinysrgb&w=1600');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #f5b042;
+            color: #1e3a2f;
+            padding: 12px 28px;
+            margin-top: 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ffc107;
+            transform: scale(1.05);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1e4a2f;
+            border-bottom: 3px solid #8bc34a;
+            display: inline-block;
+            width: auto;
+        }
+
+        .title-wrapper {
+            text-align: center;
+        }
+
+        /* Cards */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            width: 300px;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            padding: 1rem 1rem 0.5rem;
+            color: #2e7d32;
+        }
+
+        .card p {
+            padding: 0 1rem 1rem;
+            color: #2c3e2b;
+        }
+
+        /* full width text */
+        .content-block {
+            background: white;
+            padding: 2rem;
+            border-radius: 28px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 28px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #c8e6c9;
+            border-radius: 28px;
+            font-family: inherit;
+        }
+
+        button {
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f2a1f;
+            color: #d0ecd0;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin: 0.5rem 0;
+        }
+
+        .green-line {
+            height: 4px;
+            background: #8bc34a;
+            width: 80px;
+            margin: 1rem auto;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🌿 <span>Yugen</span> Greenery Hub</div>
+            <ul class="nav-links">
+                 <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Grow With Nature, Live In Harmony</h1>
+            <p>Your sanctuary for sustainable gardening, mindful planting, and organic greenery.</p>
+            <a href="#services" class="btn">Explore Our Garden</a>
+        </div>
+    </section>
+
+    <div class="container" id="about">
+        <div class="title-wrapper">
+            <h2 class="section-title">About Yugen Greenery Hub</h2>
+        </div>
+        <div class="content-block">
+            <p><strong>Yugen Greenery Hub</strong> is more than just a garden center — it's a philosophy rooted in the Japanese concept of "Yūgen" (profound grace and subtle beauty). We believe gardening is a meditative journey that reconnects humans with the earth. Founded in 2018, we have grown into a community of 5000+ passionate gardeners, offering organic seeds, heirloom plants, eco-friendly tools, and expert guidance.</p>
+            <p>Our mission: to cultivate green spaces, restore urban biodiversity, and inspire a self-sustaining lifestyle. Whether you have a balcony, backyard, or farm, we provide tailored solutions from vertical gardens to permaculture design. Over 300+ workshops conducted, 10,000 saplings planted, and countless smiles grown — join the movement.</p>
+            <p>Our core values: Sustainability, Education, Community, and Beauty. We partner with local nurseries, follow zero-waste packaging, and every purchase plants a tree in degraded lands. Let's make the world greener, one seed at a time.</p>
+        </div>
+    </div>
+
+    <div class="container" id="services">
+        <div class="title-wrapper">
+            <h2 class="section-title">Our Gardening Services</h2>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/1470207/seedling-soil-planting-hands-1470207.jpg?auto=compress&cs=tinysrgb&w=600" alt="Hand planting seedling">
+                <h3>🌱 Organic Nursery</h3>
+                <p>Over 200 varieties of organic vegetables, herbs, flowers, and native trees. All nursery stock is pesticide-free and acclimatized to local climate.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/209801/pexels-photo-209801.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gardening workshop">
+                <h3>🧑‍🌾 Workshops & Training</h3>
+                <p>Learn composting, terrace gardening, hydroponics and permaculture. Monthly workshops for beginners and advanced gardeners.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/669585/pexels-photo-669585.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Landscape design">
+                <h3>🏡 Landscape Design</h3>
+                <p>Custom garden designs for homes, offices, and community spaces. We create Japanese gardens, edible landscapes, and pollinator havens.</p>
+            </div>
+        </div>
+        <!-- More detailed content for word expansion -->
+        <div class="content-block">
+            <h3>🪴 Comprehensive Gardening Guide (Extended)</h3>
+            <p>Gardening is an art and science. At Yugen Greenery Hub, we teach you everything from soil pH management, companion planting, seasonal crop rotation, natural pest control with neem and ladybugs, to water conservation using drip irrigation and rain barrels. We offer one-on-one consultations, garden audits, and personalized planting calendars. Our expert team has decades of combined experience in tropical, subtropical, and temperate gardening. We also provide maintenance packages: monthly pruning, mulching, fertilizing with homemade compost, and disease diagnosis via our plant health clinic. Join our online community to share progress and get real-time advice. Whether you dream of a lush cottage garden, a minimalist succulent arrangement, or a food forest, we turn your vision into reality.</p>
+            <p>Our special projects include therapeutic horticulture for mental wellness, school gardening programs, and corporate social responsibility (CSR) green initiatives. We have transformed over 50 institutional campuses into green oases. Additionally, we sell premium gardening tools: stainless steel trowels, ergonomic pruners, self-watering pots, grow bags, and cocopeat blocks. All products are ethically sourced.</p>
+        </div>
+    </div>
+
+    <div class="container" id="gallery">
+        <div class="title-wrapper">
+            <h2 class="section-title">Gardening Inspiration Gallery</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.pexels.com/photos/5324346/flowers-blooming-garden-nature-5324346.jpg?auto=compress&cs=tinysrgb&w=600" alt="Blooming garden flowers"></div>
+            <div class="gallery-item"><img src="https://images.pexels.com/photos/158028/buddleja-davidii-butterfly-bush-marmalade-butterfly-blooming-158028.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Butterfly on bush"></div>
+            <div class="gallery-item"><img src="https://images.pexels.com/photos/2155038/pexels-photo-2155038.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Vegetable garden harvest"></div>
+            <div class="gallery-item"><img src="https://images.pexels.com/photos/3007199/pexels-photo-3007199.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Indoor plant collection"></div>
+            <div class="gallery-item"><img src="https://images.pexels.com/photos/2629388/pexels-photo-2629388.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Herb spiral garden"></div>
+            <div class="gallery-item"><img src="https://images.pexels.com/photos/2310647/pexels-photo-2310647.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Woman watering plants"></div>
+        </div>
+        <p style="text-align:center; margin-top:1rem;">📸 Follow us on social media for daily gardening tips and real-time updates.</p>
+    </div>
+
+    <div class="container" id="contact">
+        <div class="title-wrapper">
+            <h2 class="section-title">Get In Touch With Our Green Team</h2>
+        </div>
+        <div class="contact-form">
+            <form action="#" method="post">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea rows="5" placeholder="Tell us about your gardening dreams or queries..."></textarea>
+                <button type="submit">🌿 Send Message</button>
+            </form>
+            <p style="margin-top: 1.5rem; text-align:center;">📞 Call us directly for immediate assistance: <strong>+91 98765 43210</strong> (9 AM - 7 PM)</p>
+        </div>
+    </div>
+
+    <!-- Footer with Address and Number as requested -->
+    <footer>
+        <div class="footer-content">
+            <h3>Yugen Greenery Hub</h3>
+            <div class="green-line"></div>
+            <p>📍 Address: 128, Green Valley Avenue, Eco Park Road, Near Lotus Pond, Bangalore - 560078, Karnataka, India</p>
+            <p>📞 Phone / WhatsApp: +91 98765 43210 | +91 8067891234</p>
+            <p>✉️ Email: hello@yugengreenery.in | support@yugengreenery.com</p>
+            <p>🕒 Open Hours: Mon-Sat 9:00 AM – 7:00 PM | Sunday: 10 AM – 2 PM (Nursery only)</p>
+            <p style="margin-top: 1.5rem; font-size:0.85rem;">© 2026 Yugen Greenery Hub — Cultivating Mindful Gardens, One Leaf At A Time 🌱</p>
+        </div>
+    </footer>
+</body>
+</html>

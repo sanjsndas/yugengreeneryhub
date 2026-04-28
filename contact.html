@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Contact Us | Yugen Greenery Hub – Mindful Gardening</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f7e8;
+            color: #1e3a2f;
+            line-height: 1.6;
+        }
+
+        /* Green Theme Variables */
+        :root {
+            --primary-green: #2b5e3b;
+            --light-green: #e8f5e9;
+            --accent-green: #4caf50;
+            --dark-green: #1b3b2b;
+            --earth-brown: #8d6e63;
+            --cream: #fef9e6;
+            --soft-gold: #f5b042;
+        }
+
+        /* Header (identical to main site) */
+        header {
+            background: linear-gradient(135deg, #1e4a2f, #2e7d32);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #c8e6b5;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4f1c6;
+            transform: translateY(-2px);
+        }
+
+        /* Page Hero (contact specific) */
+        .page-hero {
+            background: linear-gradient(rgba(30,74,47,0.82), rgba(46,125,50,0.82)), url('https://images.pexels.com/photos/4592720/close-up-of-leaf-in-nature-4592720.jpg?auto=compress&cs=tinysrgb&w=1600');
+            background-size: cover;
+            background-position: center 30%;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.75rem;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.3rem;
+            margin-bottom: 2rem;
+            color: #1e4a2f;
+            border-bottom: 3px solid #8bc34a;
+            display: inline-block;
+            width: auto;
+        }
+
+        .title-wrapper {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        /* contact grid (two columns) */
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-info {
+            flex: 1.2;
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        }
+
+        .contact-form-card {
+            flex: 1.8;
+            background: var(--cream);
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .info-block {
+            margin-bottom: 2rem;
+        }
+
+        .info-block h3 {
+            font-size: 1.7rem;
+            color: #2b5e3b;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-detail {
+            margin: 1.2rem 0;
+            padding-left: 0.5rem;
+            border-left: 4px solid #8bc34a;
+        }
+
+        .info-detail p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .info-detail i {
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            background: #e9f5e4;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #1e4a2f;
+            font-weight: 500;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-link:hover {
+            background: var(--soft-gold);
+            color: #1e3a2f;
+            transform: translateY(-2px);
+        }
+
+        /* map placeholder style */
+        .map-placeholder {
+            background: #d9e6c3;
+            border-radius: 24px;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .map-placeholder iframe {
+            width: 100%;
+            border-radius: 20px;
+            border: 0;
+            height: 220px;
+        }
+
+        /* form elements */
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            margin: 5px 0;
+            border: 1px solid #c8e6c9;
+            border-radius: 32px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: white;
+            transition: 0.2s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px rgba(76,175,80,0.2);
+        }
+
+        button {
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #1f5233;
+            transform: scale(1.01);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+        }
+
+        .faq-mini {
+            background: #ffffffdb;
+            border-radius: 20px;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .faq-mini details {
+            margin: 0.6rem 0;
+            background: #fafaf0;
+            padding: 0.6rem 1rem;
+            border-radius: 28px;
+        }
+
+        details summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: #2b5e3b;
+        }
+
+        /* footer (matching main) */
+        footer {
+            background: #0f2a1f;
+            color: #d0ecd0;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .green-line {
+            height: 4px;
+            background: #8bc34a;
+            width: 80px;
+            margin: 1rem auto;
+        }
+
+        /* responsiveness */
+        @media (max-width: 780px) {
+            .contact-grid {
+                flex-direction: column;
+            }
+            .nav-links {
+                gap: 1rem;
+                margin-top: 0.5rem;
+            }
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+            .container {
+                padding: 2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">🌿 <span>Yugen</span> Greenery Hub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" style="color:#d4f1c6; font-weight:bold;">Contact</a></li>
+            <li><a href="terms.html">Terms Of Privacy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- contact specific hero section -->
+<section class="page-hero">
+    <h1>Let’s Grow Together 🌱</h1>
+    <p>Have a question about organic gardening, need expert advice, or want to collaborate? Our green team is just a message away. We’d love to hear from you.</p>
+</section>
+
+<div class="container" id="contact-page-main">
+    <div class="title-wrapper">
+        <h2 class="section-title">Reach Out To Our Nursery</h2>
+        <p style="text-align:center; max-width:700px; margin:0.5rem auto;">Connect with us for workshops, landscaping projects, bulk plant orders, or simply share your gardening journey.</p>
+    </div>
+
+    <div class="contact-grid">
+        <!-- LEFT: contact info + address + map -->
+        <div class="contact-info">
+            <div class="info-block">
+                <h3>📍 Visit Our Hub</h3>
+                <div class="info-detail">
+                    <p><strong>Yugen Greenery Hub – Flagship Nursery & Experience Center</strong></p>
+                    <p>128, Green Valley Avenue, Eco Park Road,<br> Near Lotus Pond, Bangalore - 560078, Karnataka, India</p>
+                    <p>🕒 <strong>Open Hours:</strong> Mon-Sat 9:00 AM – 7:00 PM | Sunday: 10 AM – 2 PM (Nursery only)</p>
+                    <p>📞 <strong>Phone / WhatsApp:</strong> +91 98765 43210 &nbsp;|&nbsp; +91 8067891234</p>
+                    <p>✉️ <strong>Email:</strong> hello@yugengreenery.in &nbsp;|&nbsp; support@yugengreenery.com</p>
+                </div>
+            </div>
+
+            <div class="info-block">
+                <h3>🌿 Connect With Nature & Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">📸 Instagram</a>
+                    <a href="#" class="social-link">🌱 Facebook</a>
+                    <a href="#" class="social-link">🐦 Twitter</a>
+                    <a href="#" class="social-link">📺 YouTube (Workshops)</a>
+                    <a href="#" class="social-link">💬 WhatsApp Community</a>
+                </div>
+                <p style="margin-top: 1rem; font-size:0.9rem;">Follow us for daily plant care tips, seasonal planting guides, and live Q&A sessions every weekend.</p>
+            </div>
+
+            <div class="info-block">
+                <h3>🗺️ Find Us Easily</h3>
+                <div class="map-placeholder">
+                    <!-- interactive iframe map (openstreetmap showing Bangalore area - respectful and green-themed) -->
+                    <iframe 
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=77.5946%2C12.9716%2C77.6946%2C13.0016&layer=mapnik&marker=12.9866%2C77.6446" 
+                        title="Yugen Greenery Hub location map"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                    <p style="font-size:0.75rem; margin-top:8px;">📍 Eco Park Road, Bangalore – look for the green pergola entrance</p>
+                </div>
+            </div>
+
+            <!-- quick faq -->
+            <div class="faq-mini">
+                <h4 style="color:#2b5e3b;">💡 Quick gardening Q&A</h4>
+                <details>
+                    <summary>Do you ship plants nationwide?</summary>
+                    <p>Yes! We ship eco-friendly potted plants, seeds, and gardening tools across India. Live plants are carefully packed with breathable material. Shipping charges apply based on location.</p>
+                </details>
+                <details>
+                    <summary>Can I book a free consultation?</summary>
+                    <p>Absolutely. We offer 15-min free consultation for home garden setup. Simply fill the contact form or call our helpline. Paid in-depth landscape design sessions also available.</p>
+                </details>
+                <details>
+                    <summary>Do you host weekend gardening workshops?</summary>
+                    <p>Yes, every Saturday morning (9:30 AM) we host hands-on workshops: composting, terrace gardening, and natural pest control. Registration via website or walk-in.</p>
+                </details>
+            </div>
+        </div>
+
+        <!-- RIGHT: contact form, professional inquiry -->
+        <div class="contact-form-card">
+            <h3 style="font-size: 1.8rem; margin-bottom: 0.3rem; color:#2b5e3b;">🌻 Send us a message</h3>
+            <p style="margin-bottom: 1rem;">Ask about plants, schedule a garden audit, or request a catalog.</p>
+            <form action="#" method="post" id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name *" required id="name">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address *" required id="email">
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number (optional)">
+                </div>
+                <div class="form-group">
+                    <select name="inquiry_type" id="inquiry_type">
+                        <option value="general">💬 General Inquiry</option>
+                        <option value="workshop">🧑‍🌾 Workshop / Training</option>
+                        <option value="landscape">🏡 Landscape Design & Consultation</option>
+                        <option value="bulk">🌿 Bulk Plant / Sapling Order</option>
+                        <option value="support">📦 Order Support / Returns</option>
+                        <option value="collab">🤝 Collaboration / CSR Initiative</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Tell us about your gardening dreams, questions or specific needs... *" required id="message"></textarea>
+                </div>
+                <div class="form-group" style="display: flex; gap: 1rem; align-items: center; flex-wrap:wrap;">
+                    <label style="font-size:0.85rem; display: flex; align-items:center; gap: 5px;">
+                        <input type="checkbox" required> I agree to the <a href="privacy.html" style="color:#2b5e3b;">privacy policy</a> *
+                    </label>
+                </div>
+                <button type="submit" id="submitBtn">🌱 Send Message &nbsp;→</button>
+                <p id="formFeedback" style="margin-top: 1rem; font-size:0.85rem; text-align:center; color:#2b5e3b;"></p>
+            </form>
+            <div style="margin-top: 1.5rem; background: #e2f0da; border-radius: 20px; padding: 0.9rem; text-align: center;">
+                <span style="font-weight: bold;">📞 Need urgent help?</span> Call our gardening helpline: <strong>+91 98765 43210</strong> (9 AM – 7 PM)<br>
+                <small>We respond to all email and contact form submissions within 24 hrs on weekdays.</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- additional contact section with team highlights -->
+    <div style="margin-top: 3rem; background: white; border-radius: 32px; padding: 1.8rem; box-shadow: 0 5px 12px rgba(0,0,0,0.03);">
+        <h3 style="text-align: center; font-size: 1.8rem; color:#1e4a2f;">🌟 Meet Our Green Ambassadors</h3>
+        <p style="text-align:center; max-width: 800px; margin: 0.5rem auto 1.5rem;">Our team consists of certified horticulturists, permaculture designers, and plant lovers ready to nurture your garden.</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+            <div style="text-align: center;">
+                <div style="background:#e8f5e9; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin:0 auto 10px; font-size: 2.5rem;">👩‍🌾</div>
+                <strong>Aruna K.</strong><br>Senior Horticulturist
+            </div>
+            <div style="text-align: center;">
+                <div style="background:#e8f5e9; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin:0 auto 10px; font-size: 2.5rem;">🌿</div>
+                <strong>Raghav M.</strong><br>Landscape Expert
+            </div>
+            <div style="text-align: center;">
+                <div style="background:#e8f5e9; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin:0 auto 10px; font-size: 2.5rem;">🌻</div>
+                <strong>Deepa S.</strong><br>Workshop Lead
+            </div>
+            <div style="text-align: center;">
+                <div style="background:#e8f5e9; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin:0 auto 10px; font-size: 2.5rem;">🪴</div>
+                <strong>Imran Q.</strong><br>Plant Clinic Specialist
+            </div>
+        </div>
+        <p style="text-align:center; margin-top: 1.5rem;"><em>“We are proud to have served over 10,000 happy gardeners and planted 15,000+ trees across urban spaces.”</em></p>
+    </div>
+
+    <!-- CTA section for newsletter -->
+    <div style="background: #d9efce; border-radius: 32px; margin-top: 2rem; padding: 1.8rem; text-align: center;">
+        <h3>📧 Get The Weekly Green Thumb Letter</h3>
+        <p>Subscribe to our mindful gardening newsletter – seasonal tips, exclusive discounts on seeds, and free ebooks.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; margin-top:1rem;">
+            <input type="email" placeholder="Your email address" style="width:260px; margin:0;">
+            <button style="width:auto; background:#f5b042; color:#1e3a2f;">Subscribe 🌱</button>
+        </div>
+        <p style="font-size:0.7rem; margin-top:0.5rem;">No spam, only earth-friendly inspiration. Unsubscribe anytime.</p>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <h3>Yugen Greenery Hub</h3>
+        <div class="green-line"></div>
+        <p>📍 Address: 128, Green Valley Avenue, Eco Park Road, Near Lotus Pond, Bangalore - 560078, Karnataka, India</p>
+        <p>📞 Phone / WhatsApp: +91 98765 43210 | +91 8067891234</p>
+        <p>✉️ Email: hello@yugengreenery.in | support@yugengreenery.com</p>
+        <p>🕒 Open Hours: Mon-Sat 9:00 AM – 7:00 PM | Sunday: 10 AM – 2 PM (Nursery only)</p>
+        <p style="margin-top: 1.5rem; font-size:0.85rem;">© 2026 Yugen Greenery Hub — Cultivating Mindful Gardens, One Leaf At A Time 🌱</p>
+    </div>
+</footer>
+
+<!-- simple form handling (demo) -->
+<script>
+    (function() {
+        const form = document.getElementById('contactForm');
+        const feedback = document.getElementById('formFeedback');
+        if(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name')?.value.trim();
+                const email = document.getElementById('email')?.value.trim();
+                const message = document.getElementById('message')?.value.trim();
+                if(!name || !email || !message) {
+                    feedback.innerHTML = '❌ Please fill all required fields (name, email, message).';
+                    feedback.style.color = '#b33b2c';
+                    return;
+                }
+                if(!email.includes('@') || !email.includes('.')) {
+                    feedback.innerHTML = '⚠️ Please enter a valid email address.';
+                    feedback.style.color = '#b33b2c';
+                    return;
+                }
+                // fake success simulation
+                feedback.innerHTML = '✅ Thank you ' + name + '! Our green team will reply within 24 hours. Happy gardening! 🌼';
+                feedback.style.color = '#1e4a2f';
+                form.reset();
+                // Optional: clear after 6 secs
+                setTimeout(() => {
+                    if(feedback) feedback.innerHTML = '';
+                }, 7000);
+            });
+        }
+    })();
+</script>
+</body>
+</html>

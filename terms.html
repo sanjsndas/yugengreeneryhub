@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yugen Greenery Hub | Terms of Service & Privacy Standards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f7e8;
+            color: #1e3a2f;
+            line-height: 1.6;
+        }
+
+        /* Green Theme Variables */
+        :root {
+            --primary-green: #2b5e3b;
+            --light-green: #e8f5e9;
+            --accent-green: #4caf50;
+            --dark-green: #1b3b2b;
+            --earth-brown: #8d6e63;
+            --cream: #fef9e6;
+            --soft-sage: #c5e0b4;
+        }
+
+        /* Header / Nav identical to main site (consistent identity) */
+        header {
+            background: linear-gradient(135deg, #1e4a2f, #2e7d32);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #c8e6b5;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4f1c6;
+            transform: translateY(-2px);
+        }
+
+        /* Page Hero - Terms specific */
+        .terms-hero {
+            background: linear-gradient(rgba(27, 59, 43, 0.85), rgba(30, 74, 47, 0.88)), url('https://images.pexels.com/photos/1643409/leaf-nature-green-plant-1643409.jpg?auto=compress&cs=tinysrgb&w=1600');
+            background-size: cover;
+            background-position: center 25%;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .terms-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .terms-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+        }
+
+        /* Document styling – legal clarity */
+        .legal-card {
+            background: white;
+            border-radius: 32px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: 0.2s;
+            border: 1px solid #e3f2dc;
+        }
+
+        .legal-card h2 {
+            color: #1e4a2f;
+            border-left: 6px solid #8bc34a;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.8rem;
+        }
+
+        .legal-card h3 {
+            color: #2b5e3b;
+            margin: 1.5rem 0 0.8rem 0;
+            font-size: 1.4rem;
+        }
+
+        .legal-card p, .legal-card li {
+            color: #2d3e32;
+            margin-bottom: 0.75rem;
+        }
+
+        .legal-card ul, .legal-card ol {
+            margin: 0.8rem 0 1rem 2rem;
+        }
+
+        .legal-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-note {
+            background: #eef6e9;
+            padding: 1rem 1.5rem;
+            border-radius: 24px;
+            border-left: 4px solid #4caf50;
+            margin: 1.5rem 0;
+        }
+
+        .badge-date {
+            display: inline-block;
+            background: #f5b04220;
+            color: #2e5c2e;
+            padding: 0.2rem 1rem;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .btn-scroll {
+            display: inline-block;
+            background: #2b5e3b;
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            transition: 0.2s;
+        }
+
+        .btn-scroll:hover {
+            background: #4caf50;
+        }
+
+        footer {
+            background: #0f2a1f;
+            color: #d0ecd0;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .green-line {
+            height: 4px;
+            background: #8bc34a;
+            width: 80px;
+            margin: 1rem auto;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .terms-hero h1 {
+                font-size: 2rem;
+            }
+            .legal-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">🌿 <span>Yugen</span> Greenery Hub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms Of Privacy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Terms specific hero section, echoing Yugen’s mindful tone -->
+<section class="terms-hero">
+    <h1>Terms of Service & Ethical Pledge</h1>
+    <p>Clarity, transparency, and reverence for our community — understanding how we cultivate trust together.</p>
+</section>
+
+<div class="container">
+    <!-- Main Terms content block - comprehensive and beautifully presented -->
+    <div class="legal-card">
+        <div class="badge-date">🌱 Last updated: April 15, 2026 | Version 2.1</div>
+        <h2>🌿 1. Our Commitment to You</h2>
+        <p>Welcome to <strong>Yugen Greenery Hub</strong> ("Yugen", "we", "us", or "our"). By accessing our website, purchasing plants, seeds, services, or participating in workshops and community events, you agree to these Terms of Service ("Terms"). We are a mindfulness-based ecological enterprise, and our aim is to foster a respectful, inclusive, and safe environment for all gardeners, learners, and nature enthusiasts. These Terms govern your relationship with Yugen and ensure that our shared values — regenerative impact, mindful gardening, and community care — remain front and center.</p>
+        
+        <div class="highlight-note">
+            🌸 <strong>Mindful use notice:</strong> Yugen Greenery Hub promotes slow, intentional living. We ask all users to engage with our platform responsibly and in alignment with ecological principles.
+        </div>
+
+        <h2>📜 2. Use of Our Digital Platform</h2>
+        <p>Our website (www.yugengreenery.in) and related services provide educational resources, e-commerce for plants and gardening supplies, workshop registration, and community forums. You agree to:</p>
+        <ul>
+            <li>Provide accurate, current, and complete information when creating an account or placing an order.</li>
+            <li>Maintain the confidentiality of your account credentials and notify us immediately of any unauthorized use.</li>
+            <li>Not use our platform for any unlawful purpose, spam, harassment, or to distribute harmful content.</li>
+            <li>Respect the intellectual property of our original guides, permaculture designs, and photography — all content is protected under copyright law.</li>
+        </ul>
+        <p>We reserve the right to suspend or terminate access for any violation of these Terms or actions that harm the spirit of our community.</p>
+
+        <h2>🌻 3. Products, Nursery Sales & Living Organisms</h2>
+        <p>Yugen specializes in organic, native, and heirloom plants, seeds, and eco-friendly gardening tools. Because plants are living beings, we take extra care in packing and shipping. Please note:</p>
+        <ul>
+            <li><strong>Plant Health Guarantee:</strong> We ensure that all plants are healthy at the time of dispatch. If you receive a damaged or unhealthy plant due to transit, report within 48 hours with photo evidence for a replacement or store credit.</li>
+            <li><strong>No returns on perishable items:</strong> Seeds, bare-root plants, and cuttings cannot be returned due to their perishable nature. However, if our team makes an error (wrong species or damaged packaging) we will resolve promptly.</li>
+            <li><strong>Shipping & handling:</strong> We use eco-friendly, plastic-free packaging. Delivery times vary based on location; we are not liable for delays caused by weather or courier issues.</li>
+            <li><strong>In-person pickup:</strong> For local orders, you may pick up from our Bangalore hub (address in footer) and enjoy a free composting demo with every pickup!</li>
+        </ul>
+
+        <h2>🧑‍🌾 4. Workshop & Event Registration</h2>
+        <p>We host online & in-person sessions — from permaculture intensives to "Garden Therapy for seniors". By registering, you agree to our event policies:</p>
+        <ul>
+            <li>Full payment is required at registration unless a scholarship arrangement is pre-approved.</li>
+            <li>Cancellations made 7+ days before the event receive a full refund or credit. Cancellations within 48 hours receive 50% credit. No-shows are non-refundable but can transfer to a future session subject to availability.</li>
+            <li>We may photograph or record events for promotional purposes; please inform us if you prefer not to be included.</li>
+            <li>Participants must follow safety guidelines (especially during in-person gardening sessions). Yugen is not liable for minor injuries from gardening activities, but we prioritize safe, tool-handling instruction.</li>
+        </ul>
+
+        <h2>🌎 5. Community Guidelines & Intellectual Heart</h2>
+        <p>Our online garden forums, comment sections, and social channels are spaces for mutual inspiration. We encourage respectful, fact-based dialogue. The following are prohibited:</p>
+        <ul>
+            <li>Hate speech, discrimination of any kind, or personal attacks.</li>
+            <li>Misinformation about gardening, ecology, or organic methods.</li>
+            <li>Commercial self-promotion without prior consent.</li>
+            <li>Unauthorized sharing of paid workshop content or proprietary resources.</li>
+        </ul>
+        <p>All original content — including "Yugen Method" gardening frameworks, illustrations, and digital courses — remain the sole property of Yugen Greenery Hub. You may share our public blog posts with attribution, but cannot commercially exploit them without written permission.</p>
+
+        <h2>🔐 6. Privacy & Data Ethics (Summary)</h2>
+        <p>Your privacy matters deeply to us. We collect personal data (name, email, address, payment info) solely to fulfill orders, register events, and improve your experience. We never sell data to third parties. For full transparency, please refer to our <a href="privacy.html" style="color:#2b5e3b; font-weight:600;">Privacy Policy</a> and <a href="cookies.html" style="color:#2b5e3b; font-weight:600;">Cookies Policy</a>. By using our site, you consent to our data practices as described therein.</p>
+        <div class="highlight-note">
+            📢 <strong>GDPR & Indian IT Act Compliance:</strong> Yugen respects global privacy norms. You may request data deletion, correction, or export by emailing privacy@yugengreenery.in.
+        </div>
+
+        <h2>⚖️ 7. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by law, Yugen Greenery Hub and its team shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our products, workshops, or advice. Gardening and outdoor activities involve inherent risks (e.g., soil contact, tools, pollen). We provide educational materials "as is" and encourage you to consult professionals for specific medical or land-use issues. Our total liability for any claim shall not exceed the amount paid by you for the specific product or service at issue.</p>
+
+        <h2>🔄 8. Modification & Termination</h2>
+        <p>We may update these Terms occasionally to reflect legal changes or new offerings. The "Last updated" date at the top indicates revisions. Continued use of our services after changes means you accept the new Terms. We reserve the right to terminate or suspend access without prior notice for violation of fundamental clauses (e.g., illegal activity, fraud).</p>
+
+        <h2>📞 9. Governing Law & Dispute Resolution</h2>
+        <p>These Terms shall be governed by the laws of India, Karnataka jurisdiction. Any disputes arising out of Yugen services will first be attempted to resolve through good-faith mediation — reflecting our collaborative values. If unresolved, the matter shall be submitted to binding arbitration in Bangalore, unless otherwise required by applicable consumer protection laws.</p>
+
+        <h2>🌼 10. Contact & Questions</h2>
+        <p>For any Terms-related clarification, to report a violation, or to request permissions for content reuse, please reach out to our Legal & Ethics team:</p>
+        <p>✉️ Email: legal@yugengreenery.in &nbsp;&nbsp;|&nbsp;&nbsp; 📞 +91 98765 43210 (Ext. 402)<br>
+        📍 Address: 128, Green Valley Avenue, Eco Park Road, Bangalore - 560078, India</p>
+        <p>We aim to respond to all legal or policy queries within 5-7 business days — with patience and transparency rooted in our core philosophy.</p>
+    </div>
+
+    <!-- Additional Info: Service ethics, warranty disclaimer and community promise -->
+    <div class="legal-card">
+        <h2>✨ The Yugen Promise: Beyond Fine Print</h2>
+        <p>While these Terms outline legal standards, our deeper promise is to operate with <strong>radical honesty, ecological integrity, and care</strong>. Every transaction supports rewilding projects, and every workshop plants seeds of mindfulness. We invite you to read our <a href="about.html" style="color:#2b5e3b;">About page</a> to learn about our carbon-negative operations, fair wages for farmers, and free community seed library. These Terms serve as a foundation of mutual respect — we're honoured to nurture your green journey. By choosing Yugen, you become part of a global movement toward regenerative living.</p>
+        <div style="text-align: right; margin-top: 1rem;">— The Yugen Stewardship Council</div>
+    </div>
+
+    <!-- Quick FAQ / Terms Highlights Accordion style but simple -->
+    <div class="legal-card">
+        <h2>🌱 Quick Clarity: You asked, we answer</h2>
+        <h3>Can I return a plant that I overwatered?</h3>
+        <p>We empathize — but due to the living nature of plants, we only offer a guarantee for transit damage or disease upon arrival. However, our team provides free aftercare support via email or weekly live Q&A; we’ll help you revive your green friend!</p>
+        <h3>Do you offer refunds if a workshop is postponed due to rain?</h3>
+        <p>Outdoor workshops may be rescheduled for safety. If you cannot attend the new date, we provide full credit or refund. You'll receive 24-hour notice.</p>
+        <h3>Is my donation to your rewilding fund tax-deductible?</h3>
+        <p>Yes! Yugen is registered under Section 80G of the Income Tax Act (India). Donations of ₹500+ get an 80G receipt – contact accounts@yugengreenery.in for details.</p>
+        <h3>Can I use Yugen's planting guides for my commercial farm?</h3>
+        <p>Educational blog content is free for personal use. For commercial application or redistribution, please contact us for a partnership license — we love collaborating with farms.</p>
+    </div>
+
+    <!-- Acceptance and Call to Action (back to main) -->
+    <div class="legal-card" style="background: #fef9e6; text-align: center;">
+        <p style="font-size: 1.2rem;">📖 By using our website, purchasing from our nursery, or attending any Yugen event, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. <br> <strong>Thank you for being a mindful part of our green community.</strong></p>
+        <a href="index.html" class="btn-scroll" style="background: #2b5e3b; margin-top: 1rem;">🌳 Return to Homepage</a>
+        <a href="contact.html" class="btn-scroll" style="background: #8d6e63; margin-left: 1rem;">📬 Contact Support</a>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <h3>Yugen Greenery Hub</h3>
+        <div class="green-line"></div>
+        <p>📍 Address: 128, Green Valley Avenue, Eco Park Road, Near Lotus Pond, Bangalore - 560078, Karnataka, India</p>
+        <p>📞 Phone / WhatsApp: +91 98765 43210 | +91 8067891234</p>
+        <p>✉️ Email: hello@yugengreenery.in | support@yugengreenery.com</p>
+        <p>🕒 Open Hours: Mon-Sat 9:00 AM – 7:00 PM | Sunday: 10 AM – 2 PM (Nursery only)</p>
+        <p style="margin-top: 1.5rem; font-size:0.85rem;">© 2026 Yugen Greenery Hub — Cultivating Mindful Gardens, One Leaf At A Time 🌱</p>
+    </div>
+</footer>
+
+</body>
+</html>

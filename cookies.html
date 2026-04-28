@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Cookies Policy | Yugen Greenery Hub – Mindful Gardening</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f7e8;
+            color: #1e3a2f;
+            line-height: 1.6;
+        }
+
+        /* Green Theme Variables */
+        :root {
+            --primary-green: #2b5e3b;
+            --light-green: #e8f5e9;
+            --accent-green: #4caf50;
+            --dark-green: #1b3b2b;
+            --earth-brown: #8d6e63;
+            --cream: #fef9e6;
+            --soft-gold: #f5b042;
+        }
+
+        /* Header (consistent with main site) */
+        header {
+            background: linear-gradient(135deg, #1e4a2f, #2e7d32);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #c8e6b5;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4f1c6;
+            transform: translateY(-2px);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(30,74,47,0.85), rgba(46,125,50,0.85)), url('https://images.pexels.com/photos/7028616/close-up-of-green-plants-7028616.jpg?auto=compress&cs=tinysrgb&w=1600');
+            background-size: cover;
+            background-position: center 35%;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .page-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.75rem;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* main container */
+        .cookies-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* card style for readability */
+        .cookies-card {
+            background: white;
+            border-radius: 32px;
+            padding: 2.2rem 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        .cookies-card h2 {
+            font-size: 1.8rem;
+            color: #1e4a2f;
+            margin: 1.5rem 0 1rem 0;
+            border-left: 5px solid #8bc34a;
+            padding-left: 1rem;
+        }
+
+        .cookies-card h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .cookies-card h3 {
+            font-size: 1.3rem;
+            color: #2b5e3b;
+            margin: 1rem 0 0.6rem 0;
+        }
+
+        .cookies-card p {
+            margin-bottom: 1rem;
+            color: #2c3e2f;
+        }
+
+        .cookies-card ul, .cookies-card ol {
+            margin: 0.75rem 0 1rem 1.8rem;
+        }
+
+        .cookies-card li {
+            margin: 0.5rem 0;
+        }
+
+        .highlight-badge {
+            background: #eaf5e4;
+            padding: 1rem;
+            border-radius: 24px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--soft-gold);
+        }
+
+        .effective-date {
+            background: #eef2e8;
+            padding: 0.6rem 1.2rem;
+            border-radius: 60px;
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: #fefcf5;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .cookie-table th, .cookie-table td {
+            border: 1px solid #dde6d5;
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .cookie-table th {
+            background-color: #e2f0da;
+            color: #1e4a2f;
+            font-weight: 600;
+        }
+        .cookie-table td {
+            background-color: #ffffff;
+        }
+
+        .pref-button {
+            display: inline-block;
+            background-color: #2b5e3b;
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0.5rem 0.5rem 0 0;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .pref-button:hover {
+            background-color: #1e4a2f;
+            transform: translateY(-2px);
+        }
+        .pref-secondary {
+            background-color: #8d6e63;
+        }
+        .pref-secondary:hover {
+            background-color: #6d4c41;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        /* footer (matching main) */
+        footer {
+            background: #0f2a1f;
+            color: #d0ecd0;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .green-line {
+            height: 4px;
+            background: #8bc34a;
+            width: 80px;
+            margin: 1rem auto;
+        }
+
+        /* cookie consent banner simulation (simple notification) */
+        .cookie-consent-sim {
+            background: #2c3e2f;
+            color: #f1f9e6;
+            border-radius: 28px;
+            padding: 1rem 1.5rem;
+            margin-top: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .cookie-consent-sim p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        .cookie-consent-sim .btn-sm {
+            background: #c8e6b5;
+            color: #1d3e2b;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        /* responsiveness */
+        @media (max-width: 780px) {
+            .cookies-card {
+                padding: 1.5rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                margin-top: 0.5rem;
+            }
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            .cookies-container {
+                padding: 2rem 1.2rem;
+            }
+            .cookie-table th, .cookie-table td {
+                padding: 8px 10px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">🌿 <span>Yugen</span> Greenery Hub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms Of Privacy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html" style="color:#d4f1c6; font-weight:bold;">Cookies Policy</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="page-hero">
+    <h1>🍪 Cookies Policy</h1>
+    <p>Small data crumbs that help us serve you a better, greener experience — transparently and with respect for your privacy.</p>
+</section>
+
+<div class="cookies-container">
+    <div class="cookies-card">
+        <div class="effective-date">
+            📅 Effective: 1st April 2026 | Revised: 15th April 2026
+        </div>
+        <p>At Yugen Greenery Hub (“we,” “us,” or “our”), we use cookies and similar tracking technologies to nurture your browsing experience, understand how visitors interact with our mindful gardening platform, and deliver personalized content. This Cookies Policy explains what cookies are, which ones we use, and how you can manage your preferences. By continuing to use our website <strong>yugengreenery.in</strong>, you agree to our use of cookies as described below.</p>
+
+        <h2>🌱 What Are Cookies?</h2>
+        <p>Cookies are tiny text files stored on your device (computer, tablet, or smartphone) when you visit a website. They help us recognize your device, remember your preferences (like language or cart contents), and analyze site performance. Think of them as small seed packets that help our digital garden grow more efficiently.</p>
+
+        <div class="highlight-badge">
+            🌿 <strong>Our Philosophy:</strong> We only use cookies that are necessary, functional, or help us improve your experience. No invasive tracking for the sake of surveillance. Your trust is our most valuable soil.
+        </div>
+
+        <h2>🍪 Types of Cookies We Use</h2>
+        <p>We classify cookies into four main categories. Each serves a distinct purpose to enhance your journey through Yugen Greenery Hub:</p>
+        
+        <table class="cookie-table">
+            <thead>
+                <tr><th>Cookie Type</th><th>Purpose</th><th>Examples / Duration</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Strictly Necessary 🛡️</strong></td><td>Essential for core functionality: secure login, shopping cart, checkout, and load balancing. Without these, the site may break.</td><td>Session cookies (expire when browser closes), cart data, CSRF tokens.</td></tr>
+                <tr><td><strong>Performance & Analytics 📊</strong></td><td>Help us understand how visitors use our website (pages visited, time spent, clicks) so we can improve content and plant guides.</td><td>Google Analytics (anonymized IP), heatmaps; retention up to 14 months unless you opt-out.</td></tr>
+                <tr><td><strong>Functional & Preference ⚙️</strong></td><td>Remember your choices like language, preferred region (gardening zone), or saved workshop filters.</td><td>Locale cookies, saved "favorite plants" list; persistent (up to 6 months).</td></tr>
+                <tr><td><strong>Targeting / Marketing (Limited) 🌸</strong></td><td>We use minimal marketing cookies to show relevant gardening offers or seasonal workshops you might like. No cross-site tracking for ads outside of our ecosystem without consent.</td><td>Social sharing cookies (only when you interact); opt-in required.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>🔧 How to Manage and Delete Cookies</h2>
+        <p>You have full control. You can adjust your browser settings to block or delete cookies at any time. However, please note that disabling certain cookies may affect functionality (e.g., you might lose cart items or need to re-enter preferences). Below are quick ways to manage:</p>
+        <ul>
+            <li><strong>Browser Controls:</strong> Most browsers allow you to refuse or accept cookies via settings (Chrome, Firefox, Safari, Edge). Visit “Privacy & Security” section.</li>
+            <li><strong>Opt-out of Analytics:</strong> You can disable Google Analytics tracking by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style="color:#2b5e3b;">Google Analytics Opt-out Browser Add-on</a>.</li>
+            <li><strong>Cookie Consent Tool:</strong> We respect your choice. You can update your preferences anytime by clicking the “Cookie Preferences” floating button (if available on our site) or by clearing cookies via your device.</li>
+        </ul>
+        
+        <div class="cookie-consent-sim" id="cookieBannerDemo">
+            <p>🍪 We value your privacy. You can accept all functional cookies or customize your settings below (demo preference selector).</p>
+            <div>
+                <button class="btn-sm" id="acceptCookiesBtn">Accept All</button>
+                <button class="btn-sm" id="rejectNonEssentialBtn" style="background:#e0d6c6; color:#2b3b2a;">Essential Only</button>
+            </div>
+        </div>
+        <p style="font-size:0.85rem; margin-top: -0.5rem;">*This is a preference simulation for your convenience; actual cookie management can be done via browser settings and our upcoming preference center.</p>
+
+        <h2>📋 Third-Party Cookies & Links</h2>
+        <p>Occasionally, we embed content from third-party services (e.g., YouTube gardening tutorials, Instagram feed, or payment gateways). Those third parties may set their own cookies. We do not control those cookies, and we recommend reviewing their policies:</p>
+        <ul>
+            <li><strong>Payment Partners:</strong> Razorpay, Stripe — use necessary cookies for fraud detection and checkout.</li>
+            <li><strong>Social Media Plugins:</strong> When you share a blog post via Facebook or Pinterest, those platforms may set cookies according to their own policies.</li>
+            <li><strong>Google Services:</strong> We use Google Analytics with anonymized IP; data handling follows Google's Privacy Terms.</li>
+        </ul>
+        <p>We do not sell or share cookie-generated personal data to third-party advertisers without explicit consent.</p>
+
+        <h2>📌 Your Consent and Updates</h2>
+        <p>When you first visit Yugen Greenery Hub, we display a cookie notice that allows you to accept non-essential cookies or continue with essential ones only. Your continued use implies acceptance of our updated cookie practices. We may occasionally revise this Cookies Policy to reflect new technologies or legal requirements. The "Effective Date" at the top indicates the latest version. Please check periodically.</p>
+
+        <h2>⏳ Retention of Cookie Data</h2>
+        <p>Most cookies we place are either session-based (deleted after closing the browser) or persistent with a limited lifespan (maximum 14 months for analytics). We do not retain cookie data longer than necessary for the described purposes.</p>
+
+        <div class="highlight-badge">
+            🌻 <strong>Children & Cookies:</strong> Our site is not directed to children under 13. We do not knowingly collect cookie data from minors without parental consent.
+        </div>
+
+        <h2>🛡️ More About Do Not Track (DNT)</h2>
+        <p>Some browsers have a “Do Not Track” feature that signals websites not to track your activity. Our website respects DNT signals where technically feasible. For analytics, we have taken steps to anonymize and minimize data collection.</p>
+
+        <h2>📞 Contact Us About Cookies</h2>
+        <p>If you have any questions regarding our cookie practices, would like to request a list of cookies used, or need help with disabling specific trackers, please reach out:</p>
+        <ul>
+            <li>✉️ Email: <strong>privacy@yugengreenery.in</strong> (Subject: Cookies Inquiry)</li>
+            <li>🌐 Contact form: <a href="contact.html" style="color:#2b5e3b;">Go to Contact Page</a></li>
+            <li>📞 Phone: +91 98765 43210 (Mon–Sat, 9 AM–6 PM IST)</li>
+        </ul>
+        <p>You can also write to our Grievance Officer: Meera Nair, Compliance & Data Protection Lead at the address mentioned in our <a href="privacy.html" style="color:#2b5e3b;">Privacy Policy</a>.</p>
+
+        <div class="footer-note">
+            💚 <strong>Mindful technology, transparent by nature.</strong> Every cookie at Yugen Greenery Hub is tended with respect for your digital privacy — just like we care for each sapling.
+        </div>
+    </div>
+    
+    <!-- extra details & link back to privacy -->
+    <div style="background: #eaf1e2; border-radius: 28px; padding: 1rem 1.8rem; text-align: center; margin-top: 1rem;">
+        <p style="font-size: 0.9rem;">📖 For more details about data collection and legal basis, view our <a href="privacy.html" style="color:#1e4a2f; font-weight:500;">Privacy Policy</a>. By using our website, you consent to our use of cookies as explained above. You can withdraw consent anytime.</p>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <h3>Yugen Greenery Hub</h3>
+        <div class="green-line"></div>
+        <p>📍 Address: 128, Green Valley Avenue, Eco Park Road, Near Lotus Pond, Bangalore - 560078, Karnataka, India</p>
+        <p>📞 Phone / WhatsApp: +91 98765 43210 | +91 8067891234</p>
+        <p>✉️ Email: hello@yugengreenery.in | support@yugengreenery.com</p>
+        <p>🕒 Open Hours: Mon-Sat 9:00 AM – 7:00 PM | Sunday: 10 AM – 2 PM (Nursery only)</p>
+        <p style="margin-top: 1.5rem; font-size:0.85rem;">© 2026 Yugen Greenery Hub — Cultivating Mindful Gardens, One Leaf At A Time 🌱</p>
+        <p style="margin-top: 0.5rem;"><a href="privacy.html" style="color:#c8e6b5; text-decoration:underline;">Privacy Policy</a> | <a href="terms.html" style="color:#c8e6b5; text-decoration:underline;">Terms of Use</a> | <a href="cookies.html" style="color:#c8e6b5; text-decoration:underline;">Cookies</a></p>
+    </div>
+</footer>
+
+<!-- simple interactive demo for cookie notice simulation (localStorage-free to keep it non-intrusive) -->
+<script>
+    (function() {
+        // This is just a UI demonstration to align with the policy — no actual tracking cookies set from this script.
+        // It simulates how a user might "accept" or reject non-essential cookies, storing mock preference.
+        const acceptBtn = document.getElementById('acceptCookiesBtn');
+        const rejectBtn = document.getElementById('rejectNonEssentialBtn');
+        const banner = document.getElementById('cookieBannerDemo');
+        
+        function showTemporaryMessage(msg, isSuccess = true) {
+            const originalContent = banner.innerHTML;
+            banner.innerHTML = `<p style="margin:0;">${msg}</p><button class="btn-sm" id="resetBannerMsg" style="background:#cfd8c0;">OK</button>`;
+            const resetBtn = document.getElementById('resetBannerMsg');
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                    banner.innerHTML = originalContent;
+                    // reattach events after reset
+                    attachEvents();
+                });
+            }
+            setTimeout(() => {
+                if (document.getElementById('resetBannerMsg')) {
+                    // safe check: if still showing after 3 sec and OK not clicked, reset anyway (optional)
+                }
+            }, 4000);
+        }
+        
+        function attachEvents() {
+            const newAccept = document.getElementById('acceptCookiesBtn');
+            const newReject = document.getElementById('rejectNonEssentialBtn');
+            if (newAccept) {
+                newAccept.addEventListener('click', () => {
+                    showTemporaryMessage("✅ You accepted all cookies! Functional, analytics & marketing cookies enabled. You can change preferences anytime via browser settings.");
+                    // In a real implementation, we would set consent cookies — here we demo for transparency.
+                    console.log("🌿 User accepted all cookies (demo simulation).");
+                });
+            }
+            if (newReject) {
+                newReject.addEventListener('click', () => {
+                    showTemporaryMessage("🔒 Essential cookies only enabled. No analytics or marketing cookies will be used. Thank you for your privacy choice.");
+                    console.log("🌿 User chose essential cookies only (demo simulation).");
+                });
+            }
+        }
+        
+        attachEvents();
+        
+        // Additional console log to reassure no external trackers are added beyond policy
+        console.log("🍪 Yugen Greenery Hub - Cookies Policy page. We respect your preferences. No third-party cookies are set by this page except as described in policy.");
+    })();
+</script>
+</body>
+</html>
